@@ -1,0 +1,28 @@
+﻿@model List<ASPNETMVCCRUD.Models.Domain.Person>
+
+@{
+}
+<h1>Persons</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Date Of Birth</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var person in Model)
+		{
+			<tr>
+				<td>@person.Id</td>
+				<td>@person.Name</td>
+				<td>@person.Email</td>
+				<td>@person.DateOfBirth.ToString("dd-MM-yyyy")</td>
+				<td><a href="Persons/View/@person.Id">View</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
